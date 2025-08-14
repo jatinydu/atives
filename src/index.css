@@ -53,3 +53,19 @@
   --spacing-6xl: 96px;
   --spacing-7xl: 128px;
 }
+
+#feed1{
+  background-image: url('./assets//images/Feed/writer.jpg') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.feed2{
+  background-image: url('./assets//images/Feed/writer.jpg');
+}
+
+.feed3{
+  background-image: url('./assets//images/Feed/writer.jpg');
+}
+
