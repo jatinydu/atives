@@ -5,15 +5,14 @@ import Feed from "./pages/Feed";
 function App() {
 
   return (
-    <main className="min-h-screen w-screen lg:px-7xl px-xl relative">
-      {/* Navbar */}
-      <Navbar/>
-      <BrowserRouter>
-         <Routes>
-            <Route path="/" element={<Feed/>}/>
-         </Routes>
-      </BrowserRouter>
-    </main>
+    <BrowserRouter>
+      <main className="min-h-screen w-screen lg:px-7xl px-xl overflow-visible">
+        <Navbar/>
+          <Routes>
+              <Route path="/" element={<Feed/>}/>
+          </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
 

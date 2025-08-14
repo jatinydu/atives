@@ -9,7 +9,7 @@ export default function Feed() {
     <main className="w-full">
         {/* Hero section */}
         <section className="w-full h-auto">
-            <div className="w-full flex flex-col gap-5 items-center-safe justify-center min-h-[90vh]">
+            <div className="w-full flex flex-col gap-5 items-center-safe justify-center min-h-[90vh] mt-[10vh]">
                 <HeroTag/>
                 {/* Title & desc */}
                 <h1 className="text-5xl font-semibold text-center lg:w-[50%] overflow-hidden">Where Creativity Meets Opportunity</h1>
