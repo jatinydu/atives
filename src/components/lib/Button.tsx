@@ -12,7 +12,7 @@ const variantSizes = {
     lg: "px-4xl py-sm rounded-lg text-md",
 }
 
-const defaultStyles = "transition duration-500 flex items-center gap-2 font-sans"
+const defaultStyles = "transition duration-500 flex items-center gap-2 font-sans cursor-pointer"
 
 interface IButton{
     variant?: 'primary' | 'secondary' | 'danger';
