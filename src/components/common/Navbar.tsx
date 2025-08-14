@@ -13,7 +13,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="h-[10vh] flex items-center justify-between sticky top-0 left-0 bg-[#ffffff8e] border-b-1 border-b-secondary-100">
+    <div className="h-[9vh] flex items-center justify-between sticky top-0 left-0 bg-[#ffffff8e] border-b-1 border-b-secondary-100">
       <span className="font-semibold text-xl"><span className="text-accent-800">1A</span>tives</span>
       <div className="flex gap-3 items-center">
         <ul className="lg:flex items-center gap-2xl mr-5 transition duration-300 hidden">

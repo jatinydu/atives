@@ -5,7 +5,7 @@ import Feed from "./pages/Feed";
 function App() {
 
   return (
-    <main className="min-h-screen w-screen lg:px-7xl px-xl">
+    <main className="min-h-screen w-screen lg:px-7xl px-xl relative">
       {/* Navbar */}
       <Navbar/>
       <BrowserRouter>

@@ -54,6 +54,11 @@
   --spacing-7xl: 128px;
 }
 
+*{
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 #feed1{
   background-image: url('./assets//images/Feed/writer.jpg') !important;
   background-size: cover;
