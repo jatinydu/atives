@@ -3,7 +3,7 @@ import { JobCard } from "@/components/lib/Card"
 import Dropdown from "@/components/lib/Dropdown"
 import { Filter } from "lucide-react"
 import { jobs } from "@/data/card"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { jobTypes, locations, sortOptions } from "@/data/dropdown"
 
 function parseSalary(salary: string) {
@@ -28,6 +28,7 @@ function parseSalary(salary: string) {
   }
 
 export default function JobPage() {
+  const inputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState({
     jobType: "",
     location: "",
@@ -73,6 +74,27 @@ export default function JobPage() {
         setNewJobs(filteredJobs);
     },[search])
 
+    const handleSearch = () => {
+      const query = inputRef.current?.value.trim().toLowerCase();
+      if (!query) {
+        setNewJobs(jobs); 
+        return;
+      }
+      const results = jobs.filter(job =>
+        job.title.toLowerCase().includes(query) ||
+        job.description.toLowerCase().includes(query) || 
+        job.type.toLowerCase().includes(query)   
+      );
+       setNewJobs(results);
+    };
+  
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        handleSearch();
+      }
+    };
+
   return (
     <main className="w-full min-h-[90vh] mt-[10vh] z-30">
         {/* Hero section */}
@@ -92,7 +114,8 @@ export default function JobPage() {
                             <Dropdown options={jobTypes} placeholder="Job Type" type="job" onSelect={selectHandler}/>
                             <Dropdown options={locations} placeholder="Location" type="location" onSelect={selectHandler}/>
                             <Dropdown options={sortOptions} placeholder="Sort By" type="sort" onSelect={selectHandler}/>
-                            <Button onClick={()=>{ setNewJobs(jobs); setSearch({jobType: "", location: "", sortBy: "" })}} variant="secondary" className="px-lg" label="Clear"/>
+                            <input onKeyDown={handleKeyDown} ref={inputRef} type="text" placeholder="search job..." className="py-1 px-2 border-2 rounded-lg placeholder:text-black"/>
+                            <Button onClick={()=>{ setNewJobs(jobs); inputRef.current?inputRef.current.value="":""; setSearch({jobType: "", location: "", sortBy: "" })}} variant="secondary" className="px-lg" label="Clear"/>
                         </div>
                         {/* cards */}
                         <div className="w-full grid lg:grid-cols-2 grid-cols-1 py-5 lg:px-10 px-2 gap-5 gap-y-8">

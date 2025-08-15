@@ -4,6 +4,7 @@ import Feed from "./pages/Feed";
 import JobPage from "./pages/JobPage";
 import ExplorePage from "./pages/ExplorePage";
 import Profile from "./pages/Profile";
+import StepperSignup from "./pages/StepperSignup";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
               <Route path="/profile" element={<Profile/>}/>
               <Route path="/jobs" element={<JobPage/>}/>
               <Route path="/explore" element={<ExplorePage/>}/>
+              <Route path="/signup" element={<StepperSignup/>} />
           </Routes>
       </main>
     </BrowserRouter>

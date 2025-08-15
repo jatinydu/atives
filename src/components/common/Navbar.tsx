@@ -38,7 +38,7 @@ export default function Navbar() {
                 }
             </Link>
         </ul>
-         <Button variant="primary" size="md" label="Get Started" className="lg:flex hidden"/>
+         <Button onClick={(()=>{ navigate('/signup')})} variant="primary" size="md" label="Get Started" className="lg:flex hidden"/>
          <ProfileIcon onClick={()=>{ navigate('/profile') }}/>
          <HamburgerMenu burgerActive={burgerActive} className="lg:hidden flex" onClick={burgerToggle}/>
       </div>
