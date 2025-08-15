@@ -2,10 +2,10 @@ import { useState } from "react";
 import Button from "../lib/Button";
 import ProfileIcon from "./ProfileIcon";
 import HamburgerMenu from "./HamburgerMenu";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 export default function Navbar() {
-  const [active, setActive] = useState<string>("Feed");
+  const location = useLocation(); 
   const [burgerActive, setBurgerActive] = useState<boolean>(false);
 
   const burgerToggle=(e:any)=>{
@@ -14,26 +14,26 @@ export default function Navbar() {
   }
 
   return (
-    <div className="h-[9vh] w-screen px-7xl flex items-center justify-between fixed top-0 left-0 bg-[#ffffffdd] border-b-1 border-b-secondary-100 z-50">
+    <div className="h-[9vh] w-screen md:px-7xl px-xl flex items-center justify-between fixed top-0 left-0 bg-[#ffffffdd] border-b-1 border-b-secondary-100 z-50">
       <span className="font-semibold text-xl"><span className="text-accent-800">1A</span>tives</span>
       <div className="flex gap-3 items-center">
         <ul className="lg:flex items-center gap-2xl mr-5 transition duration-300 hidden">
-            <Link to='/' className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Feed")}>
+            <Link to='/' className="cursor-pointer hover:text-accent-800">
                 Feed
                 {
-                   active === "Feed" && <div className="bg-accent-800 h-[2px]"></div>
+                   location.pathname === "/" && <div className="bg-accent-800 h-[2px]"></div>
                 }
             </Link>
-            <Link to='/jobs' className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Job")}>
+            <Link to='/jobs' className="cursor-pointer hover:text-accent-800">
                 Job
                 { 
-                     active === "Job" && <div className="bg-accent-800 h-[2px]"></div>
+                      location.pathname === "/jobs" && <div className="bg-accent-800 h-[2px]"></div>
                 }
             </Link>
-            <Link to='/explore' className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Explore")}>
+            <Link to='/explore' className="cursor-pointer hover:text-accent-800">
                 Explore
                 {
-                    active === "Explore" && <div className="bg-accent-800 h-[2px]"></div>
+                     location.pathname === "/explore" && <div className="bg-accent-800 h-[2px]"></div>
                 }
             </Link>
         </ul>

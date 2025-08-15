@@ -1,4 +1,4 @@
-import { Heart, MessageCircle } from "lucide-react"
+import { Heart, MessageCircle, ExternalLink } from "lucide-react"
 import Tab from "../common/Tab"
 import trimText from "../../utils/trimText"
 import Button from "./Button"
@@ -27,6 +27,21 @@ interface IJobsCardProps {
     posted: string,
     salary: string,
     type?: string,
+}
+
+interface ICreatorProps{
+    name: string,
+    role: string,
+    tags: string[],
+    img: string,
+    followers: number,
+    following: number
+}
+
+interface IResourceProps{
+    title:string,
+    desc:string,
+    img:string
 }
 
 export const ProjectCard=({title,profile_pic,name,position,desc,created_at,img,category,likeCount,commentCount}:IProjectCardProps)=> {
@@ -87,6 +102,45 @@ export const JobCard=({title,company,type="remote",description,skills,salary,pos
                 <li className="text-xs">💵 Salary: {salary}</li>
                 <Button className="w-full flex justify-center items-center mt-sm" variant="primary" size="md" label="Apply Now"/>
             </ul>
+        </div>
+    )
+}
+
+export const CreatorCard=({name,role,tags,img,followers,following}:ICreatorProps)=>{
+    return (
+        <div className="min-w-[250px] flex flex-col gap-2 p-4 items-center shadow-lg rounded-lg transition duration-500 hover:shadow-xl cursor-pointer">
+            <img src={img} alt="Proifle" className="h-15 w-15 rounded-full bg-accent-700"/>
+            <ul className="text-center">
+                <p className="text-sm">{name}</p>
+                <span className="text-[10px] text-secondary-300">{role}</span>
+            </ul>
+            <ul className="flex items-center text-[10px] gap-2 text-secondary-300">
+                <span>{followers} followers</span>
+                <div className="w-1 h-1 bg-secondary-400 rounded-full"></div>
+                <span>{following} following</span>
+            </ul>
+            <ul className="flex items-center gap-2 text-secondary-700 mt-1">
+                {
+                    tags.map((tag, index) => (
+                        <Tab key={index} className="bg-secondary-100" label={tag}/>
+                    ))
+                }
+            </ul>
+            <Button label="Follow" variant="primary" size="sm" className="w-full flex justify-center items-center mt-3 font-medium"/>
+        </div>
+    )
+}
+
+
+export const ResourceCard=({title,desc,img}:IResourceProps)=>{
+    return (
+        <div className="flex flex-col shadow-lg rounded-lg transition duration-500 hover:shadow-2xl cursor-pointer">
+            <img src={img} alt="resource" />
+            <div className="p-5 flex flex-col gap-2">
+                <h3 className="text-xs font-semibold">{title}</h3>
+                <p className="text-[10px] text-secondary-400">{desc}</p>
+                <Button startIcon={<ExternalLink className="h-3"/>} label="View Resource" variant="secondary" size="sm" className="w-full flex justify-center items-center mt-3 font-medium border-[1px] text-[9px] hover:border-accent-800 gap-0"/>
+            </div>
         </div>
     )
 }

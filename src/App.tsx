@@ -2,6 +2,7 @@ import Navbar from "./components/common/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Feed from "./pages/Feed";
 import JobPage from "./pages/JobPage";
+import ExplorePage from "./pages/ExplorePage";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
           <Routes>
               <Route path="/" element={<Feed/>}/>
               <Route path="/jobs" element={<JobPage/>}/>
+              <Route path="/explore" element={<ExplorePage/>}/>
           </Routes>
       </main>
     </BrowserRouter>

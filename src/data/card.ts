@@ -243,3 +243,103 @@ export const feedProjects = [
   ];
   
   
+  export const creatorsData = [
+    {
+      img: "https://i.pravatar.cc/300?img=1",
+      name: "Aarav Sharma",
+      role: "UI/UX Designer",
+      followers: 12500,
+      following: 320,
+      tags: ["Design", "Figma", "Prototyping"],
+    },
+    {
+      img: "https://i.pravatar.cc/300?img=2",
+      name: "Meera Kapoor",
+      role: "Frontend Developer",
+      followers: 18700,
+      following: 290,
+      tags: ["React", "Tailwind CSS", "JavaScript"],
+    },
+    {
+      img: "https://i.pravatar.cc/300?img=3",
+      name: "Rohan Patel",
+      role: "Product Manager",
+      followers: 9100,
+      following: 150,
+      tags: ["Agile", "Scrum", "Product Strategy"],
+    },
+    {
+      img: "https://i.pravatar.cc/300?img=4",
+      name: "Ishita Verma",
+      role: "Digital Marketer",
+      followers: 14200,
+      following: 410,
+      tags: ["SEO", "Social Media", "Content Marketing"],
+    },
+    {
+      img: "https://i.pravatar.cc/300?img=5",
+      name: "Kabir Malhotra",
+      role: "Full Stack Developer",
+      followers: 21500,
+      following: 380,
+      tags: ["Node.js", "MongoDB", "Express"],
+    },
+    {
+      img: "https://i.pravatar.cc/300?img=6",
+      name: "Sanya Mehta",
+      role: "Content Creator",
+      followers: 17300,
+      following: 275,
+      tags: ["YouTube", "Video Editing", "Storytelling"],
+    },
+  ];
+
+
+  export const resources = [
+    {
+      img: "https://placehold.co/600x400",
+      title: "Beginner's Guide to UI/UX Design",
+      desc: "A complete introduction to design principles, wireframing, and user experience best practices.",
+    },
+    {
+      img: "https://placehold.co/600x400",
+      title: "Mastering React in 30 Days",
+      desc: "Step-by-step guide to learning React.js with practical projects and real-world examples.",
+    },
+    {
+      img: "https://placehold.co/600x400",
+      title: "SEO Optimization Tips for 2025",
+      desc: "Latest strategies to improve your search rankings and drive organic traffic.",
+    },
+    {
+      img: "https://placehold.co/600x400",
+      title: "Full Stack Developer Roadmap",
+      desc: "A clear roadmap covering frontend, backend, databases, and deployment skills.",
+    },
+    {
+      img: "https://placehold.co/600x400",
+      title: "Effective Social Media Marketing",
+      desc: "Learn how to create engaging posts and grow your audience across platforms.",
+    },
+    {
+      img: "https://placehold.co/600x400",
+      title: "JavaScript Advanced Concepts",
+      desc: "Understand closures, async/await, event loop, and other advanced JavaScript topics.",
+    },
+    {
+      img: "https://placehold.co/600x400",
+      title: "Freelancing 101: Get Your First Client",
+      desc: "Proven tips for setting up your profile, pitching, and securing your first freelance gig.",
+    },
+    {
+      img: "https://placehold.co/600x400",
+      title: "Productivity Hacks for Developers",
+      desc: "Tools, workflows, and habits to code faster and manage projects efficiently.",
+    },
+    {
+      img: "https://placehold.co/600x400",
+      title: "The Ultimate Figma Tutorial",
+      desc: "Hands-on guide to creating beautiful UI designs using Figma from scratch.",
+    },
+  ];
+  
