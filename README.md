@@ -1,69 +1,55 @@
-# React + TypeScript + Vite
+# Social Network for the Creative World
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Atives is a modern, social networking platform designed specifically for the **creative community**, artists, designers, photographers, musicians, and more.  
+It allows creatives to **share their work, explore others’ creations, and connect** with like-minded people in an engaging and visually appealing environment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🚀 Features
 
-## Expanding the ESLint configuration
+- **Modern UI** with custom Tailwind CSS theme variables  
+- **Lucide Icons** for a clean and professional icon set  
+- **Job Search** functionality with instant filtering  
+- **Responsive Design** for mobile, tablet, and desktop  
+- **Reusable Components** structure for easy scalability  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🛠 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React** – Frontend library for UI  
+- **Tailwind CSS** – Utility-first CSS framework  
+- **Lucide-React** – Icon library  
+- **Vercel** – Deployment platform  
+- **TypeScript** – Type-safe development  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+### 📂 Folder Structure
+<img width="227" height="478" alt="folder-structure" src="https://github.com/user-attachments/assets/11fccb58-2dbd-4edf-a10d-2c74b7771162" />
+
+
+---
+
+### 🎨 Theming
+
+Before starting the project, we **customized Tailwind variables** based on the project's design theme.
+
+---
+
+### ⚡ Setting  up and running locally
+
+```bash
+git clone https://github.com/jatinydu/atives
+```
+```bash
+cd atives
+```
+```bash
+npm install
+```
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
