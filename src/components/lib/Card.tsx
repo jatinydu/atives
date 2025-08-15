@@ -3,7 +3,7 @@ import Tab from "../common/Tab"
 import trimText from "../../utils/trimText"
 import Button from "./Button"
 
-interface IProjectCardProps {
+export interface IProjectCardProps {
     id?:string,
     title:string,
     desc:string,
@@ -17,7 +17,7 @@ interface IProjectCardProps {
     profile_pic:string
 }
 
-interface IJobsCardProps {
+export interface IJobsCardProps {
     id: string,
     title: string,
     company: string,
@@ -29,7 +29,7 @@ interface IJobsCardProps {
     type?: string,
 }
 
-interface ICreatorProps{
+export interface ICreatorProps{
     name: string,
     role: string,
     tags: string[],
@@ -38,7 +38,7 @@ interface ICreatorProps{
     following: number
 }
 
-interface IResourceProps{
+export interface IResourceProps{
     title:string,
     desc:string,
     img:string

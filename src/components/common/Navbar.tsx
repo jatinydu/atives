@@ -2,9 +2,10 @@ import { useState } from "react";
 import Button from "../lib/Button";
 import ProfileIcon from "./ProfileIcon";
 import HamburgerMenu from "./HamburgerMenu";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const location = useLocation(); 
   const [burgerActive, setBurgerActive] = useState<boolean>(false);
 
@@ -38,7 +39,7 @@ export default function Navbar() {
             </Link>
         </ul>
          <Button variant="primary" size="md" label="Get Started" className="lg:flex hidden"/>
-         <ProfileIcon/>
+         <ProfileIcon onClick={()=>{ navigate('/profile') }}/>
          <HamburgerMenu burgerActive={burgerActive} className="lg:hidden flex" onClick={burgerToggle}/>
       </div>
     </div>

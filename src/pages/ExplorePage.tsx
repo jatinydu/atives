@@ -7,7 +7,6 @@ export default function ExplorePage() {
   const [selectedTab, setSelectedTab] = useState('creators');  
   return (
     <main className="w-full min-h-[90vh] mt-[10vh] z-30">
-        {/* Hero section */}
         <section className="w-full h-auto">
             <div className="w-full flex flex-col gap-5 items-center-safe justify-center min-h-[90vh]">
                 {/* Title & desc */}

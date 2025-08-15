@@ -10,7 +10,7 @@ export const feedProjects = [
       position: "Painter",
       likesCount: 324,
       commentCount: 45,
-      profile_pic:'https://i.pravatar.cc'
+      profile_pic:'https://i.pravatar.cc/300?img=3'
     },
     {
       id: "2",
