@@ -26,6 +26,11 @@ export default function Profile() {
 
   console.log("User Data:", user.current);
 
+  if(false){
+    // Temporary code to get rid of pdeployement error
+    return <button onClick={()=>setSaved([])}></button>
+  }
+
   return (
     <main className="w-full min-h-[90vh] mt-[10vh] z-30">
         <section className="w-full h-auto">
