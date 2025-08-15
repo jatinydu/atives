@@ -1,10 +1,26 @@
 import Button from "@/components/lib/Button";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function OnboardingStepper() {
   const [step, setStep] = useState(1);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const locationRef = useRef<HTMLInputElement>(null);
+  const bioRef = useRef<HTMLTextAreaElement>(null);
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, 2));
+  const nextStep = () => {
+    if(nameRef.current && !nameRef.current.value || emailRef.current && !emailRef.current.value) {
+      alert("Please fill in all required fields in Step 1.");
+      return;
+    }
+
+    if( emailRef.current && !emailRef.current.value.includes('@') ) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    
+    setStep((prev) => Math.min(prev + 1, 2))
+  };
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   return (
@@ -28,11 +44,15 @@ export default function OnboardingStepper() {
         <div>
           <h2 className="text-xl font-bold mb-4">Step 1 - Basic Info</h2>
           <input
+            ref={nameRef}
+            required
             type="text"
             placeholder="Name"
             className="border-2 w-full p-2 rounded-lg mb-3 focus:outline-0 focus:border-accent-800"
           />
           <input
+            ref={emailRef}
+            required
             type="email"
             placeholder="Email"
             className="border-2 w-full p-2 rounded-lg focus:outline-0 focus:border-accent-800"
@@ -44,11 +64,15 @@ export default function OnboardingStepper() {
         <div>
           <h2 className="text-xl font-bold mb-4">Step 2 - Details</h2>
           <input
+            ref={locationRef}
+            required
             type="text"
             placeholder="Location"
             className="border-2 w-full p-2 rounded-lg mb-3 focus:outline-0 focus:border-accent-800"
           />
           <textarea
+            ref={bioRef}
+            required
             placeholder="Short Bio"
             className="border-2 w-full p-2 rounded-lg focus:outline-0 focus:border-accent-800"
           />
@@ -76,7 +100,13 @@ export default function OnboardingStepper() {
           <Button
             variant="primary"
             size="md"
-            onClick={() => alert("Signup Complete!")}
+            onClick={() => {
+              if((nameRef.current && !nameRef.current.value) || (emailRef.current && !emailRef.current.value) || (locationRef.current && !locationRef.current.value) || (bioRef.current && !bioRef.current.value)) {
+                alert("Please fill in all required fields before finishing.");
+                return;
+              }
+              alert("Signup Complete!")
+            }}
             className="ml-auto px-4 py-2 rounded text-white"
             label="Finish"
           />
