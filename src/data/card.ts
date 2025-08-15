@@ -128,4 +128,118 @@ export const feedProjects = [
     //   commentCount: 40,
     // },
   ];
+
+  export const jobs = [
+    {
+      id: "1",
+      title: "Senior Software Developer",
+      company: "TechStart Inc.",
+      description: "We are looking for a senior UI designer to join our product team and help create beautiful, user-friendly interfaces.",
+      skills: ["UI Design", "Figma", "Prototyping"],
+      location: "Remote",
+      posted: "2 days ago",
+      salary: "$80,000 - $100,000",
+      type:'Full Time'
+    },
+    {
+      id: "2",
+      title: "Full Stack Developer",
+      company: "Innovate Labs",
+      description: "Join our engineering team to build scalable web applications and backend APIs.",
+      skills: ["JavaScript", "React", "Node.js", "MongoDB"],
+      location: "New York, USA",
+      posted: "5 days ago",
+      salary: "$90,000 - $110,000",
+      type:'Full Time'
+    },
+    {
+      id: "3",
+      title: "UI/UX Designer",
+      company: "Pixel Perfect Studio",
+      description: "Create wireframes, prototypes, and final designs for mobile and web applications.",
+      skills: ["Sketch", "Figma", "User Research"],
+      location: "Remote",
+      posted: "1 week ago",
+      salary: "$70,000 - $90,000",
+      type:'Full Time'
+    },
+    {
+      id: "4",
+      title: "Backend Engineer",
+      company: "DataFlow Systems",
+      description: "Develop APIs and services to power large-scale applications.",
+      skills: ["Python", "Django", "PostgreSQL"],
+      location: "London, UK",
+      posted: "3 days ago",
+      salary: "£55,000 - £70,000",
+      type:'Internship'
+    },
+    {
+      id: "5",
+      title: "Product Manager",
+      company: "BrightTech",
+      description: "Lead product strategy and coordinate between design, dev, and marketing teams.",
+      skills: ["Agile", "JIRA", "Leadership"],
+      location: "Berlin, Germany",
+      posted: "4 days ago",
+      salary: "€65,000 - €85,000",
+      type:'Freelance'
+    },
+    {
+      id: "6",
+      title: "Mobile App Developer",
+      company: "Appify Solutions",
+      description: "Work on iOS and Android apps with a focus on smooth UX and performance.",
+      skills: ["Flutter", "Dart", "Firebase"],
+      location: "Remote",
+      posted: "1 day ago",
+      salary: "$75,000 - $95,000",
+      type:'Freelance'
+    },
+    {
+      id: "7",
+      title: "DevOps Engineer",
+      company: "CloudSprint",
+      description: "Manage cloud infrastructure and CI/CD pipelines for high-traffic apps.",
+      skills: ["AWS", "Docker", "Kubernetes"],
+      location: "Toronto, Canada",
+      posted: "6 days ago",
+      salary: "CAD $95,000 - $115,000",
+      type:'Freelance'
+    },
+    {
+      id: "8",
+      title: "Frontend Engineer",
+      company: "WebWave",
+      description: "Implement modern, responsive interfaces using React and Tailwind.",
+      skills: ["React", "Tailwind CSS", "JavaScript"],
+      location: "San Francisco, USA",
+      posted: "3 days ago",
+      salary: "$85,000 - $105,000",
+      type:'Freelance'
+    },
+    {
+      id: "9",
+      title: "Data Scientist",
+      company: "Insight AI",
+      description: "Analyze datasets and build predictive models to support business decisions.",
+      skills: ["Python", "TensorFlow", "SQL"],
+      location: "Remote",
+      posted: "2 weeks ago",
+      salary: "$100,000 - $130,000",
+      type:'Full Time'
+    },
+    {
+      id: "10",
+      title: "Graphic Designer",
+      company: "DesignHub",
+      description: "Design branding materials, social media creatives, and marketing assets.",
+      skills: ["Photoshop", "Illustrator", "Creativity"],
+      location: "Sydney, Australia",
+      posted: "1 week ago",
+      salary: "AUD $60,000 - $80,000",
+      type:'Full Time'
+    }
+  ];
+  
   

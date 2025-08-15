@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../lib/Button";
 import ProfileIcon from "./ProfileIcon";
 import HamburgerMenu from "./HamburgerMenu";
+import { Link } from "react-router";
 
 export default function Navbar() {
   const [active, setActive] = useState<string>("Feed");
@@ -17,24 +18,24 @@ export default function Navbar() {
       <span className="font-semibold text-xl"><span className="text-accent-800">1A</span>tives</span>
       <div className="flex gap-3 items-center">
         <ul className="lg:flex items-center gap-2xl mr-5 transition duration-300 hidden">
-            <li className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Feed")}>
+            <Link to='/' className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Feed")}>
                 Feed
                 {
                    active === "Feed" && <div className="bg-accent-800 h-[2px]"></div>
                 }
-            </li>
-            <li className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Job")}>
+            </Link>
+            <Link to='/jobs' className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Job")}>
                 Job
                 { 
                      active === "Job" && <div className="bg-accent-800 h-[2px]"></div>
                 }
-            </li>
-            <li className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Explore")}>
+            </Link>
+            <Link to='/explore' className="cursor-pointer hover:text-accent-800" onClick={()=>setActive("Explore")}>
                 Explore
                 {
                     active === "Explore" && <div className="bg-accent-800 h-[2px]"></div>
                 }
-            </li>
+            </Link>
         </ul>
          <Button variant="primary" size="md" label="Get Started" className="lg:flex hidden"/>
          <ProfileIcon/>

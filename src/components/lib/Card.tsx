@@ -1,6 +1,7 @@
 import { Heart, MessageCircle } from "lucide-react"
 import Tab from "../common/Tab"
 import trimText from "../../utils/trimText"
+import Button from "./Button"
 
 interface IProjectCardProps {
     id?:string,
@@ -14,6 +15,18 @@ interface IProjectCardProps {
     name:string,
     position:string,
     profile_pic:string
+}
+
+interface IJobsCardProps {
+    id: string,
+    title: string,
+    company: string,
+    description: string,
+    skills: string[],
+    location: string,
+    posted: string,
+    salary: string,
+    type?: string,
 }
 
 export const ProjectCard=({title,profile_pic,name,position,desc,created_at,img,category,likeCount,commentCount}:IProjectCardProps)=> {
@@ -52,4 +65,28 @@ export const ProjectCard=({title,profile_pic,name,position,desc,created_at,img,c
   )
 }
 
-//  <img src="https://placehold.co/600x4000" alt="Project Thumbnail" className="w-full h-48 object-cover mb-4" />
+export const JobCard=({title,company,type="remote",description,skills,salary,posted,location}:IJobsCardProps)=>{
+    return (
+        <div className="flex flex-col gap-1 shadow-lg p-4 rounded-xl transition duration-500 hover:shadow-xl cursor-pointer">
+            <ul className="flex items-center justify-between flex-wrap">
+                <h3>{title}</h3>
+                <span className="text-[10px] text-accent-800 bg-[#0000ff2c] px-2 rounded-2xl">{type}</span>
+            </ul>
+            <ul className="flex flex-col gap-2">
+                <li className="text-secondary-400 text-xs">{company}</li>
+                <li className="text-xs">{trimText(description,80)}</li>
+                <li className="text-sm flex gap-2 items-center py-1">
+                    {
+                        skills.map((skill, index) => (
+                            <Tab key={index} className="bg-accent-100" label={skill}/>
+                        ))
+                    }
+                </li>
+                <li className="text-xs">🗺️ {location}</li>
+                <li className="text-xs">⏲️ {posted}</li>
+                <li className="text-xs">💵 Salary: {salary}</li>
+                <Button className="w-full flex justify-center items-center mt-sm" variant="primary" size="md" label="Apply Now"/>
+            </ul>
+        </div>
+    )
+}
