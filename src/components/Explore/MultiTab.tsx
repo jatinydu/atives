@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BookOpen, Briefcase, Users } from "lucide-react";
 
 const tabOptions=[

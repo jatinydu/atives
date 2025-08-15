@@ -9,7 +9,7 @@ export default function Navbar() {
   const location = useLocation(); 
   const [burgerActive, setBurgerActive] = useState<boolean>(false);
 
-  const burgerToggle=(e:any)=>{
+  const burgerToggle=()=>{
      console.log('button click')
      setBurgerActive((prev)=>!prev);
   }

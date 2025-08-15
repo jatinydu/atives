@@ -2,7 +2,7 @@ import MultiTab from "@/components/Profile/MultiTab";
 import ProfileCard from "@/components/Profile/ProfileCard";
 import { ProjectCard } from "@/components/lib/Card";
 import { feedProjects } from "@/data/card";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import type { IProjectCardProps } from "@/components/lib/Card";
 import { Star } from "lucide-react";
 
@@ -21,7 +21,7 @@ export default function Profile() {
   });
 
   const [selectedTab, setSelectedTab] = useState('posts');
-  const [projects, setProjects] = useState(feedProjects);
+//   const [projects, setProjects] = useState(feedProjects);
   const [saved, setSaved] = useState<IProjectCardProps[]>([]);
 
   console.log("User Data:", user.current);
