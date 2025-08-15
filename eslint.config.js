@@ -19,6 +19,8 @@ export default tseslint.config([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
-    ignoreDuringBuilds: true,
+    rules: {
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    },
   },
 ])
